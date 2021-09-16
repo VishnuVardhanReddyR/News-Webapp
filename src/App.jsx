@@ -152,7 +152,6 @@ export default function App() {
 
 const Home = ({ theme }) => {
 
-  let newsno = 1;
   const API_KEY = "66d4965851db4b4b9300f15d13443cfe"; //place your key here
   const [news, setNews] = useState([]);
   const [search, setSearch] = useState('in');
@@ -163,7 +162,6 @@ const Home = ({ theme }) => {
   const [news5, setNews5] = useState([]);
   const [news6, setNews6] = useState([]);
   const [cap, setCap] = useState('delhi');
-  const [results, setResults] = useState();
   const [display, setDisplay] = useState(false);
   const [display1, setDisplay1] = useState(false);
   const [display2, setDisplay2] = useState(false);
@@ -909,7 +907,7 @@ const About = ({ theme }) => {
   }, [query, numdate, filter]);
 
   const getNews = async (e) => {
-    const api_call = await fetch(`http://newsapi.org/v2/everything?q=${query}&from=${numdate}&to=${numdate}&sortBy=${filter}&page=1&pageSize=100&apiKey=66d4965851db4b4b9300f15d13443cfe`);
+    const api_call = await fetch(`https://newsapi.org/v2/everything?q=${query}&from=${numdate}&to=${numdate}&sortBy=${filter}&page=1&pageSize=100&apiKey=66d4965851db4b4b9300f15d13443cfe`);
     const response = await api_call.json();
     setNews(response.articles);
     setPagenum(response.totalResults);
