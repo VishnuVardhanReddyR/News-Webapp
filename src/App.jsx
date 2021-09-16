@@ -171,16 +171,16 @@ const Home = ({ theme }) => {
   const [display6, setDisplay6] = useState(false);
   const [x, setX] = useState(0);
   const [x1, setX1] = useState(0);
-  const [x2, setX2] = useState(0)
-  const [x3, setX3] = useState(0)
-  const [x4, setX4] = useState(0)
-  const [x5, setX5] = useState(0)
+  const [x2, setX2] = useState(0);
+  const [x3, setX3] = useState(0);
+  const [x4, setX4] = useState(0);
+  const [x5, setX5] = useState(0);
   const [x6, setX6] = useState(0);
 
   useEffect(() => {
     getNews();
   }, [search]);
-  // https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=
+
   const getNews = async (e) => {
 
     if (search) {
@@ -212,9 +212,6 @@ const Home = ({ theme }) => {
       const response6= await api_call6.json();
       setNews6(response6.articles);
     }
-    // const city_api_call = await fetch(`http://country.io/capital.json`);
-    // const city_response= await city_api_call.json();
-    // console.log(city_response);
   }
 
 
@@ -1289,7 +1286,7 @@ const Dashboard = ({ theme }) => {
     const city1 = e.target.elements.city.value;
     const country1 = e.target.elements.country.value;
     if (city1 && country1) {
-      const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city1},${country1}&appid=c6495ff8b8839c36a2991986616d8307`);
+      const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city1},${country1}&appid=c6495ff8b8839c36a2991986616d8307`);
       const response = await api_call.json();
       console.log(response);
       setCity(response.name);
@@ -1361,7 +1358,6 @@ const Dashboard = ({ theme }) => {
             <div className="gmap_canvas">
               <iframe width="400" height="500" id="gmap_canvas" src={`https://maps.google.com/maps?q=${city}&t=&z=8&ie=UTF8&iwloc=&output=embed`} frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
               </iframe>
-              {/* <a href="https://www.embedgooglemap.net">embedgooglemap.net</a> */}
             </div>
           </div>
         </div>
