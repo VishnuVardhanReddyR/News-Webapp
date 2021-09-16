@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-date-picker';
 import "react-datepicker/dist/react-datepicker.css";
-import "./components/css/weather-icons.css";
+import "./components/weather-icons/css/weather-icons.css";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,7 +10,6 @@ import {
 } from "react-router-dom";
 import "./App.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import News from "./components/news.components";
 import Weather from "./components/weather.components";
 
 
