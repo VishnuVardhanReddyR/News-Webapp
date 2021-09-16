@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker from 'react-date-picker';
 import "react-datepicker/dist/react-datepicker.css";
-import "./components/weather-icons/css/weather-icons.css";
+import "./components/css/weather-icons.css";
 import {
   BrowserRouter as Router,
   Switch,
