@@ -888,6 +888,7 @@ const Home = ({ theme }) => {
 };
 
 const About = ({ theme }) => {
+  const API_KEY = "66d4965851db4b4b9300f15d13443cfe";
   const [news, setNews] = useState([]);
   const [search, setSearch] = useState();
   const [query, setQuery] = useState('apple');
@@ -904,7 +905,7 @@ const About = ({ theme }) => {
   }, [query, numdate, filter]);
 
   const getNews = async (e) => {
-    const api_call = await fetch(`https://newsapi.org/v2/everything?q=${query}&from=${numdate}&to=${numdate}&sortBy=${filter}&page=1&pageSize=100&apiKey=66d4965851db4b4b9300f15d13443cfe`);
+    const api_call = await fetch(`https://newsapi.org/v2/everything?q=${query}&from=${numdate}&to=${numdate}&sortBy=${filter}&page=1&pageSize=100&apiKey=${API_KEY}`);
     const response = await api_call.json();
     setNews(response.articles);
     setPagenum(response.totalResults);
@@ -1227,7 +1228,6 @@ const About = ({ theme }) => {
 };
 
 const Dashboard = ({ theme }) => {
-
   const [city, setCity] = useState();
   const [country, setCountry] = useState();
   const [lat, setLat] = useState();
